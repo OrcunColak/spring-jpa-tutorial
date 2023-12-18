@@ -1,4 +1,4 @@
-package com.colak.springjpatutorial;
+package com.colak.springjpatutorial.onetoone.bidirectional;
 
 import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.jpa.Employee;
 import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.jpa.ParkingSpace;
@@ -16,7 +16,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class SpringJpaTutorialApplicationTests {
+class EmployeeControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;

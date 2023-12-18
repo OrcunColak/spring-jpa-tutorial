@@ -23,9 +23,6 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
-    private static final String STATUS_LITERAL = "status";
-    private static final String DATA_LITERAL = "data";
-    private static final String MESSAGE_LITERAL = "message";
 
     @PostMapping("/save")
     public Employee saveEmp(@RequestBody CreateEmployeeDTO createEmployeeDTO) {
@@ -43,9 +40,8 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees")
-    public List<Employee> getEmployees() {
+    public List<Employee> findAllEmployees() {
         return employeeService.findAll();
-
     }
 
     @GetMapping("/parkingspaces")
