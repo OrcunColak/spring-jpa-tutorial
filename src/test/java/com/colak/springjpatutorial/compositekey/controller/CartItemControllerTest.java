@@ -1,5 +1,6 @@
 package com.colak.springjpatutorial.compositekey.controller;
 
+import com.colak.springjpatutorial.compositekey.jpa.CartItemPrimaryKey;
 import com.colak.springjpatutorial.dto.CartItemDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,19 @@ class CartItemControllerTest {
     private TestRestTemplate restTemplate;
 
     @Test
+    void testFindById() {
+        String getUrl = "/api/cartitem/findbyid";
+
+        CartItemPrimaryKey cartItemPrimaryKey = new CartItemPrimaryKey(1L, 10L);
+        CartItemDTO firstCartItem = restTemplate.postForObject(
+                getUrl,
+                cartItemPrimaryKey,
+                CartItemDTO.class);
+
+        assertCartItemDTO(firstCartItem);
+    }
+
+    @Test
     void testFindAllCartItems() {
         String getUrl = "/api/cartitem/cartitems";
 
@@ -32,6 +46,10 @@ class CartItemControllerTest {
         List<CartItemDTO> cartItemList = response.getBody();
         assert cartItemList != null;
         CartItemDTO firstCartItem = cartItemList.getFirst();
+        assertCartItemDTO(firstCartItem);
+    }
+
+    private static void assertCartItemDTO(CartItemDTO firstCartItem) {
         assertEquals(1, firstCartItem.getCartId());
         assertEquals(10, firstCartItem.getProductId());
     }
