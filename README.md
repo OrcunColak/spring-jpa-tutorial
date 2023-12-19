@@ -1,7 +1,8 @@
 # Introduction
 This project demonstrates 
-- JPA OneToOne with Shared Primary Key. 
-- Composite primary key with @IdClass annotation
+- JPA OneToOne with Shared Primary Key for Employee + ParkingSpace
+- Composite primary key with @IdClass annotation for CartItem
+- Many To Many for Company + Projects
 
 # H2
 Go to  

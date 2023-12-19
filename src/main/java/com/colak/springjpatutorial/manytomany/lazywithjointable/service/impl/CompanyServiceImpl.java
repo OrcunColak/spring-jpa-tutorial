@@ -7,11 +7,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @RequiredArgsConstructor
 @Service
 public class CompanyServiceImpl implements CompanyService {
 
     private final CompanyRepository companyRepository;
+
+    @Override
+    public Optional<Company> findById(Integer id) {
+        return companyRepository.findById(id);
+    }
 
     @Transactional
     @Override
