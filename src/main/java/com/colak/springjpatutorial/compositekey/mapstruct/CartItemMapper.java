@@ -1,7 +1,7 @@
 package com.colak.springjpatutorial.compositekey.mapstruct;
 
 import com.colak.springjpatutorial.compositekey.jpa.CartItem;
-import com.colak.springjpatutorial.dto.CartItemDTO;
+import com.colak.springjpatutorial.compositekey.dto.CartItemDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

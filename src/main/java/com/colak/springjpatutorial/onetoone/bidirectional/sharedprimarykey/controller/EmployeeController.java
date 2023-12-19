@@ -2,7 +2,8 @@ package com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.cont
 
 import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.jpa.Employee;
 import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.jpa.ParkingSpace;
-import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.model.CreateEmployeeDTO;
+import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.mapstruct.EmployeeMapper;
+import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.dto.EmployeeDTO;
 import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.service.EmployeeService;
 import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.service.ParkingSpaceService;
 import lombok.RequiredArgsConstructor;
@@ -25,14 +26,14 @@ public class EmployeeController {
 
 
     @PostMapping("/save")
-    public Employee saveEmp(@RequestBody CreateEmployeeDTO createEmployeeDTO) {
+    public Employee saveEmp(@RequestBody EmployeeDTO employeeDTO) {
         //creating ParkingSpace object and setting properties
         ParkingSpace parkingSpace = new ParkingSpace();
-        parkingSpace.setName(createEmployeeDTO.getName() + " parking space");
+        parkingSpace.setName(employeeDTO.getName() + " parking space");
 
         //saving employee into db
-        Employee employee = new Employee();
-        employee.setName(createEmployeeDTO.getName());
+        Employee employee = EmployeeMapper.INSTANCE.dtoToEmployee(employeeDTO);
+        employee.setName(employeeDTO.getName());
         employee.setParkingSpace(parkingSpace);
         employeeService.save(employee);
 

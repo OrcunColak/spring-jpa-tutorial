@@ -2,7 +2,7 @@ package com.colak.springjpatutorial.compositekey.controller;
 
 import com.colak.springjpatutorial.compositekey.jpa.CartItemPrimaryKey;
 import com.colak.springjpatutorial.compositekey.service.CartItemService;
-import com.colak.springjpatutorial.dto.CartItemDTO;
+import com.colak.springjpatutorial.compositekey.dto.CartItemDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

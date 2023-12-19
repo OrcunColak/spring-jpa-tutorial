@@ -2,7 +2,7 @@ package com.colak.springjpatutorial.onetoone.bidirectional;
 
 import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.jpa.Employee;
 import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.jpa.ParkingSpace;
-import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.model.CreateEmployeeDTO;
+import com.colak.springjpatutorial.onetoone.bidirectional.sharedprimarykey.dto.EmployeeDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,15 +24,15 @@ class EmployeeControllerTest {
 
     @Test
     void testListEmployee() {
-        CreateEmployeeDTO createEmployeeDTO = new CreateEmployeeDTO();
+        EmployeeDTO employeeDTO = new EmployeeDTO();
         String employeeName = "orçun";
-        createEmployeeDTO.setName(employeeName);
+        employeeDTO.setName(employeeName);
 
         String saveUrl = "/api/employee/save";
 
         Employee employee = restTemplate.postForObject(
                 saveUrl,
-                createEmployeeDTO,
+                employeeDTO,
                 Employee.class
         );
 

@@ -1,7 +1,7 @@
 package com.colak.springjpatutorial.compositekey.controller;
 
 import com.colak.springjpatutorial.compositekey.jpa.CartItemPrimaryKey;
-import com.colak.springjpatutorial.dto.CartItemDTO;
+import com.colak.springjpatutorial.compositekey.dto.CartItemDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

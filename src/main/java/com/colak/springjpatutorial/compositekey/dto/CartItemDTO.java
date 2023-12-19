@@ -1,4 +1,4 @@
-package com.colak.springjpatutorial.dto;
+package com.colak.springjpatutorial.compositekey.dto;
 
 import lombok.Getter;
 import lombok.Setter;
