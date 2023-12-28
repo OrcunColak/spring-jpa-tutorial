@@ -1,7 +1,7 @@
 package com.colak.springjpatutorial.manytomany.lazywithjointable.service.impl;
 
 import com.colak.springjpatutorial.manytomany.lazywithjointable.jpa.Project;
-import com.colak.springjpatutorial.manytomany.lazywithjointable.respository.ProjectRepository;
+import com.colak.springjpatutorial.manytomany.lazywithjointable.repository.ProjectRepository;
 import com.colak.springjpatutorial.manytomany.lazywithjointable.service.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

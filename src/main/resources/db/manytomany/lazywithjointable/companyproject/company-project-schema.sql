@@ -15,3 +15,9 @@ CREATE TABLE company_project_mapping (
     project_id INTEGER NOT NULL,
     PRIMARY KEY (company_id,project_id)
 );
+
+ALTER TABLE IF EXISTS company_project_mapping
+ADD CONSTRAINT company_id_fk FOREIGN KEY (company_id) REFERENCES company;
+
+ALTER TABLE IF EXISTS company_project_mapping
+ADD CONSTRAINT project_id_fk FOREIGN KEY (project_id) REFERENCES project;
