@@ -5,6 +5,7 @@ import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.mapstruct.Author
 import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.service.AuthorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +26,15 @@ public class AuthorController {
                 .stream()
                 .map(mapper::authorToDTO)
                 .toList();
+    }
+
+    @GetMapping("/findByIdEntityGraph/{id}")
+    public AuthorDTO findByIdEntityGraph(@PathVariable(name = "id") Long id) {
+        AuthorMapper mapper = AuthorMapper.INSTANCE;
+
+        return authorService.findById(id)
+                .map(mapper::authorToDTO)
+                .orElseThrow();
+
     }
 }

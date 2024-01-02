@@ -10,6 +10,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -22,7 +23,6 @@ class AuthorControllerTest {
 
     @Test
     void testFindAllWithBooks() {
-
         String getUrl = "/api/author/findAllWithBooks";
 
         ResponseEntity<List<AuthorDTO>> response = restTemplate.exchange(
@@ -35,6 +35,45 @@ class AuthorControllerTest {
         assert authorDTOList != null;
         AuthorDTO firstAuthorDTO = authorDTOList.getFirst();
 
+        assertAuthor(firstAuthorDTO);
+    }
+
+    @Test
+    void testFindAllWithBooksEntityGraph() {
+        String getUrl = "/api/author/findByIdEntityGraph/1";
+
+        ResponseEntity<AuthorDTO> response = restTemplate.exchange(
+                getUrl,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {
+                });
+        AuthorDTO authorDTO = response.getBody();
+
+        assertAuthor(authorDTO);
+    }
+
+    @Test
+    void testFindAllWithBooksEntityGraphNoBooks() {
+        String getUrl = "/api/author/findByIdEntityGraph/2";
+
+        ResponseEntity<AuthorDTO> response = restTemplate.exchange(
+                getUrl,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {
+                });
+        AuthorDTO authorDTO = response.getBody();
+
+        AuthorDTO expected = new AuthorDTO();
+        expected.setId(2L);
+        expected.setName("author-2");
+        expected.setBooks(Collections.emptyList());
+
+        assertEquals(expected, authorDTO);
+    }
+
+    private static void assertAuthor(AuthorDTO firstAuthorDTO) {
         BookDTO book1 = new BookDTO();
         book1.setId(1L);
         book1.setTitle("book-1");
