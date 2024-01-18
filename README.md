@@ -9,7 +9,14 @@ This project demonstrates
 Shows N+1 Select Problem solution using
 1. JPQL JOIN FETCH
 2. Spring @EntityGraph
- 
+
+# ManyToMany
+For Company + Projects
+
+# ManyToMany And Specification
+The original idea is from  
+https://medium.com/hprog99/mastering-spring-data-jpa-specifications-for-robust-data-access-24e7626d169a
+
 # H2
 Go to  
 http://localhost:8080/h2-console
