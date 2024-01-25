@@ -1,8 +1,8 @@
-package com.colak.springjpatutorial.onetomany.lazywithjoincolumn.service.impl;
+package com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.service.impl;
 
-import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.jpa.Author;
-import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.repository.AuthorRepository;
-import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.service.AuthorService;
+import com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.jpa.Author;
+import com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.repository.AuthorRepository;
+import com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.service.AuthorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-package com.colak.springjpatutorial.onetomany.lazywithjoincolumn.dto;
+package com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.dto;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

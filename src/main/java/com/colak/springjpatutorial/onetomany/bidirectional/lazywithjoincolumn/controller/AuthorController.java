@@ -1,8 +1,8 @@
-package com.colak.springjpatutorial.onetomany.lazywithjoincolumn.controller;
+package com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.controller;
 
-import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.dto.AuthorDTO;
-import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.mapstruct.AuthorMapper;
-import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.service.AuthorService;
+import com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.dto.AuthorDTO;
+import com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.service.AuthorService;
+import com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.mapstruct.AuthorMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

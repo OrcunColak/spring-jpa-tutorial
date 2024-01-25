@@ -1,7 +1,7 @@
-package com.colak.springjpatutorial.onetomany.lazywithjoincolumn.controller;
+package com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.controller;
 
-import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.dto.AuthorDTO;
-import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.dto.BookDTO;
+import com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.dto.AuthorDTO;
+import com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.dto.BookDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

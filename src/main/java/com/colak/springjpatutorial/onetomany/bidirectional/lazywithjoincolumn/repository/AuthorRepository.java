@@ -1,6 +1,6 @@
-package com.colak.springjpatutorial.onetomany.lazywithjoincolumn.repository;
+package com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.repository;
 
-import com.colak.springjpatutorial.onetomany.lazywithjoincolumn.jpa.Author;
+import com.colak.springjpatutorial.onetomany.bidirectional.lazywithjoincolumn.jpa.Author;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
