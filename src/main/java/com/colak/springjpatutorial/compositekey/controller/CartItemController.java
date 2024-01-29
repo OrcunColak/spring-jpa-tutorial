@@ -4,6 +4,7 @@ import com.colak.springjpatutorial.compositekey.jpa.CartItemPrimaryKey;
 import com.colak.springjpatutorial.compositekey.service.CartItemService;
 import com.colak.springjpatutorial.compositekey.dto.CartItemDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +20,7 @@ public class CartItemController {
 
     private final CartItemService cartItemService;
 
-    @PostMapping(value = "/findbyid", consumes = "application/json", produces = "application/json")
+    @PostMapping(value = "/findbyid", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public CartItemDTO findById(@RequestBody CartItemPrimaryKey cartItemPrimaryKey) {
         return cartItemService.findById(cartItemPrimaryKey);
     }
