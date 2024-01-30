@@ -31,7 +31,6 @@ public abstract class  BaseRepositoryImpl<T, ID> implements BaseRepository<T, ID
         if (result != null) {
             entityManager.merge(result);
         }
-
     }
 
     @Override

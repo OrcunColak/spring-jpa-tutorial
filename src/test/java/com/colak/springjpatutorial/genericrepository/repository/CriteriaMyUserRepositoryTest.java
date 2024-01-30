@@ -10,10 +10,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-class MyUserRepositoryTest {
+class CriteriaMyUserRepositoryTest {
 
     @Autowired
-    @Qualifier(value = "userRepository")
+    @Qualifier(value = "criteriaUserRepository")
     private UserRepository userRepository;
 
     @Test

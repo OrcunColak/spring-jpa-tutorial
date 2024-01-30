@@ -28,6 +28,11 @@ https://medium.com/hprog99/mastering-spring-data-jpa-specifications-for-robust-d
 The original idea is from  
 https://beratyesbek.medium.com/hibernate-jpa-spring-data-jpa-hibernate-proxy-and-architectures-ebd76e95d8bd
 
+# Generic Repository Using JPA Criteria
+
+The original idea is from
+https://medium.com/@zeyadahmedcs/comprehensive-guide-to-decoding-the-java-persistence-puzzle-jmh-benchmarking-of-native-query-hql-108fd7220c54
+
 # JPA Auditing
 
 The original idea is from
