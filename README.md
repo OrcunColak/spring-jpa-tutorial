@@ -28,6 +28,11 @@ https://medium.com/hprog99/mastering-spring-data-jpa-specifications-for-robust-d
 The original idea is from  
 https://beratyesbek.medium.com/hibernate-jpa-spring-data-jpa-hibernate-proxy-and-architectures-ebd76e95d8bd
 
+# JPA Auditing
+
+The original idea is from
+https://medium.com/@vpaipathirana/jpa-auditing-spring-boot-spring-security-575c77867570
+
 # H2
 
 Go to  
