@@ -14,19 +14,22 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.util.Date;
+import java.time.Instant;
 
 /**
- * "@CreatedBy, @CreatedDate, @LastModifiedBy, and @LastModifiedDate" annotations empower you to effortlessly
+ * Then @CreatedBy, @CreatedDate, @LastModifiedBy, and @LastModifiedDate annotations empower you to effortlessly
  * incorporate auditing attributes into your entity classes
  * <p>
- * "@MappedSuperclass" annotation marks this class as a non-persistent class and hibernate will not create/look up a
+ * The @MappedSuperclass annotation marks this class as a non-persistent class and hibernate will not create/look up a
  * table mapping for this class.
  * <p>
- * "@EntityListeners" annotation specifies one or more listener classes that implement
+ * The @EntityListeners annotation specifies one or more listener classes that implement
  * the corresponding JPA callback methods for an entity class.
- * These methods will be invoked automatically when specified events occur  on the entity, such as
+ * These methods will be invoked automatically when specified events occur on the entity, such as
  * entity creation, update, or deletion.
+ * <p>
+ * The @Temporal annotation has the single parameter value of type TemporalType.
+ * It can be either DATE, TIME or TIMESTAMP, depending on the underlying SQL type that we want to use for the mapping.
  */
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
@@ -43,12 +46,12 @@ public class AuditBase {
     @CreatedDate
     @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
+    private Instant createdDate;
 
     @LastModifiedBy
     private String lastModifiedBy;
 
     @LastModifiedDate
     @Temporal(TemporalType.TIMESTAMP)
-    private Date lastModifiedDate;
+    private Instant lastModifiedDate;
 }
