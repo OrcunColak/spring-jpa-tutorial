@@ -9,9 +9,11 @@ import java.util.Optional;
  * override the getCurrentAuditor() method. And inside getCurrentAuditor(), we will need to fetch a currently logged-in user.
  */
 public class SpringSecurityAuditorAwareImpl implements AuditorAware<String> {
+
+    public static final String AUDITOR_NAME = "myauditor";
     @Override
     public Optional<String> getCurrentAuditor() {
-        return Optional.of("Orcun");
+        return Optional.of(AUDITOR_NAME);
 //        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //        if (authentication == null || !authentication.isAuthenticated()) {
 //            return Optional.empty();

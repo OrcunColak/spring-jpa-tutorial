@@ -1,6 +1,7 @@
 package com.colak.springjpatutorial.auditing.jpa;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -9,9 +10,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @Table(name = "supplier")
+@EntityListeners(AuditingEntityListener.class)
+
 @Getter
 @Setter
 @NoArgsConstructor

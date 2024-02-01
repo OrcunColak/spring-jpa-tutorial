@@ -1,7 +1,6 @@
 package com.colak.springjpatutorial.auditing.jpa;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -12,7 +11,6 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.Instant;
 
@@ -32,25 +30,27 @@ import java.time.Instant;
  * It can be either DATE, TIME or TIMESTAMP, depending on the underlying SQL type that we want to use for the mapping.
  */
 @MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
+
 
 @Getter
 @NoArgsConstructor
 @SuperBuilder
 public class AuditBase {
 
+    @Column(name = "created_by", nullable = false, updatable = false)
     @CreatedBy
-    @Column(updatable = false)
     private String createdBy;
 
+    @Column(name = "created_date", nullable = false, updatable = false)
     @CreatedDate
-    @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Instant createdDate;
 
+    @Column(name = "modified_by")
     @LastModifiedBy
     private String lastModifiedBy;
 
+    @Column(name = "modified_date")
     @LastModifiedDate
     @Temporal(TemporalType.TIMESTAMP)
     private Instant lastModifiedDate;
