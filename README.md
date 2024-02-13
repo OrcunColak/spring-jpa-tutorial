@@ -33,10 +33,6 @@ https://beratyesbek.medium.com/hibernate-jpa-spring-data-jpa-hibernate-proxy-and
 The original idea is from
 https://medium.com/@zeyadahmedcs/comprehensive-guide-to-decoding-the-java-persistence-puzzle-jmh-benchmarking-of-native-query-hql-108fd7220c54
 
-# JPA Auditing
-
-The original idea is from
-https://medium.com/@vpaipathirana/jpa-auditing-spring-boot-spring-security-575c77867570
 
 # H2
 

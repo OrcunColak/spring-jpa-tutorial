@@ -15,7 +15,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.time.Instant;
 
 /**
- * Then @CreatedBy, @CreatedDate, @LastModifiedBy, and @LastModifiedDate annotations empower you to effortlessly
+ * The @CreatedBy, @CreatedDate, @LastModifiedBy, and @LastModifiedDate annotations empower you to effortlessly
  * incorporate auditing attributes into your entity classes
  * <p>
  * The @MappedSuperclass annotation marks this class as a non-persistent class and hibernate will not create/look up a
